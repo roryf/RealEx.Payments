@@ -25,7 +25,7 @@ namespace RealEx.Tests
 
             Because of = () => subject.AutoSettle = false;
 
-            It auto_settle_flag_should_be_one = () => subject.AutoSettleFlag.ShouldEqual("0");
+            It auto_settle_flag_should_be_zero = () => subject.AutoSettleFlag.ShouldEqual("0");
         }
     }
 }
