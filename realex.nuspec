@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>RealEx.Payments</id>
+    <version>0.1.0</version>
+    <authors>Rory Fitzpatrick</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A helper library for Realex Payments Realauth Redirect protocol.</description>
+    <language>en-GB</language>
+	<copyright>Rory Fitzpatrick, Storm ID Ltd.</copyright>
+    <licenseUrl>https://github.com/roryf/RealEx.Payments/blob/master/license.txt</licenseUrl>
+    <projectUrl>https://github.com/roryf/RealEx.Payments</projectUrl>
+    <tags>Realex</tags>
+  </metadata>
+  <files>
+    <file src="build\release\RealEx.dll" target="lib\net40" />
+    <file src="build\release\RealEx.pdb" target="lib\net40" />
+  </files>
+</package>

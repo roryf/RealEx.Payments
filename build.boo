@@ -15,7 +15,7 @@ target test:
 
 desc "Copies binaries to the build directory"
 target deploy:
-	rmdir('build')
+	rm('build')
 
 	with FileList():
 		.Include("src/RealEx/bin/${configuration}/RealEx.*")
@@ -25,6 +25,19 @@ target deploy:
 		.ForEach def(file):
 			file.CopyToDirectory("build/${configuration}")
 
-desc "Creates zip package"
+desc "Creates zip and nuget packages"
 target package:
 	zip("build/${configuration}", "build/RealEx.zip")
+
+	nuget_pack(toolPath: ".nuget/nuget.exe", nuspecFile: "realex.nuspec", outputDirectory: "build/nuget")
+
+desc "Publishes nuget package"
+target publish:
+	apiKey = env("apiKey")
+
+	with FileList():
+		.Include("build/nuget/*.nupkg")
+		.Flatten(true)
+		.ForEach def(file):
+			exec("echo publishing ${file.FullName}")
+			nuget_push(toolPath: ".nuget/nuget.exe", apiKey: apiKey, packagePath: file.FullName)
