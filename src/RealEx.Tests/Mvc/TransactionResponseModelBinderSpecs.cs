@@ -50,7 +50,7 @@ namespace RealEx.Tests.Mvc
 
             It should_set_auth_code = () => result.AuthCode.ShouldEqual("1234");
 
-            It should_set_result_code = () => result.ResultCode.ShouldEqual(0);
+            It should_set_result_code = () => result.ResultCode.ShouldEqual("00");
 
             It should_set_result_message = () => result.ResultMessage.ShouldEqual("Successful");
 

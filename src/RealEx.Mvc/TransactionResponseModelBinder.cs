@@ -24,7 +24,7 @@ namespace RealEx.Mvc
                 CvnResult = GetFormField(CvnResult, bindingContext.ValueProvider),
                 MerchantId = GetFormField(MerchantId, bindingContext.ValueProvider),
                 RealExTransactionReference = GetFormField(RealExTransactionReference, bindingContext.ValueProvider),
-                ResultCode = Convert.ToInt32(GetFormField(ResultCode, bindingContext.ValueProvider)),
+                ResultCode = GetFormField(ResultCode, bindingContext.ValueProvider),
                 ResultMessage = GetFormField(ResultMessage, bindingContext.ValueProvider),
                 Sha1Hash = GetFormField(Sha1Hash, bindingContext.ValueProvider),
                 SubAccount = GetFormField(SubAccount, bindingContext.ValueProvider),

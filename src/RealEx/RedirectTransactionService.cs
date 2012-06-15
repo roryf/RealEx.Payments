@@ -49,23 +49,26 @@ namespace RealEx
             {
                 return TransactionStatus.HashMismatch;
             }
-            if (response.ResultCode == 0)
+
+            var responseCode = Convert.ToInt32(response.ResultCode);
+
+            if (responseCode == 0)
             {
                 return TransactionStatus.Successful;
             }
-            if (response.ResultCode > 100 && response.ResultCode < 200)
+            if (responseCode > 100 && responseCode < 200)
             {
                 return TransactionStatus.Declined;
             }
-            if (response.ResultCode >= 200 && response.ResultCode < 400)
+            if (responseCode >= 200 && responseCode < 400)
             {
                 return TransactionStatus.UnknownError;
             }
-            if (response.ResultCode >= 500 && response.ResultCode < 600)
+            if (responseCode >= 500 && responseCode < 600)
             {
                 return TransactionStatus.IncorrectTransactionRequest;
             }
-            if (response.ResultCode == 666)
+            if (responseCode == 666)
             {
                 return TransactionStatus.AccountDeactivated;
             }

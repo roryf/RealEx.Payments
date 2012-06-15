@@ -63,7 +63,7 @@ namespace RealEx.Tests
                     service = new RedirectTransactionService(TestConfig);
                     response = new TransactionResponse
                     {
-                        ResultCode = 0,
+                        ResultCode = "0",
                         Sha1Hash = "d92cc7e3b0c2df1c47df8ce949b76524255e82c3"
                     };
                 };
@@ -85,7 +85,7 @@ namespace RealEx.Tests
                 service = new RedirectTransactionService(TestConfig);
                 response = new TransactionResponse
                 {
-                    ResultCode = 0,
+                    ResultCode = "0",
                     Sha1Hash = "foobar"
                 };
             };
@@ -107,7 +107,7 @@ namespace RealEx.Tests
                 service = new RedirectTransactionService(TestConfig);
                 response = new TransactionResponse
                 {
-                    ResultCode = 101,
+                    ResultCode = "101",
                     Sha1Hash = "064964b16cd80dd11ea0a14ed93b73f8b0cdcd0c"
                 };
             };
