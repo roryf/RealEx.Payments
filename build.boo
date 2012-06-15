@@ -18,7 +18,8 @@ target deploy:
 	rm('build')
 
 	with FileList():
-		.Include("src/RealEx/bin/${configuration}/RealEx.*")
+		.Include("src/**/bin/${configuration}/RealEx.*")
+		.Exclude("src/**/bin/${configuration}/RealEx.Tests.*")
 		.Include("License.txt")
 		.Include("readme.md")
 		.Flatten(true)

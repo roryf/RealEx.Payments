@@ -64,7 +64,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\RealEx.Mvc\RealEx.Mvc.csproj">
+    <ProjectReference Include="..\RealEx.Mvc\RealEx.Mvc.csproj">
       <Project>{28DADB60-D6F3-469C-80C9-F9301A996FFA}</Project>
       <Name>RealEx.Mvc</Name>
     </ProjectReference>

@@ -35,7 +35,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\mvc\System.Web.Mvc.dll</HintPath>
+      <HintPath>..\..\lib\mvc\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,7 +48,7 @@
     <Compile Include="TransactionResponseModelBinder.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\RealEx\RealEx.csproj">
+    <ProjectReference Include="..\RealEx\RealEx.csproj">
       <Project>{B8F26512-4052-43D1-A894-2F72E72C7D1D}</Project>
       <Name>RealEx</Name>
     </ProjectReference>
