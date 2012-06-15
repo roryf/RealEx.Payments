@@ -11,7 +11,7 @@ namespace RealEx.Tests
             MerchantId = "TestMerchant",
             Mode = AccountMode.Test,
             SharedSecret = "foobar",
-            SubAccount = "internet"
+            SubAccount = "test"
         };
 
         [Subject(typeof(RedirectTransactionService))]
@@ -47,6 +47,8 @@ namespace RealEx.Tests
             It should_set_endpoint_to_default = () => result.UrlEndPoint.ShouldEqual("https://redirect.globaliris.com/epage.cgi");
 
             It should_set_amount_with_no_decimal_points = () => result.Amount.ShouldEqual("10000");
+
+            It should_set_sub_account = () => result.SubAccount.ShouldEqual("test");
         }
 
         [Subject(typeof(RedirectTransactionService), "validating transaction response")]
