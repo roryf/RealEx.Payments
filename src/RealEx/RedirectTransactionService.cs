@@ -78,7 +78,10 @@ namespace RealEx
 
         private string GetAddressCode(Address address)
         {
-            return string.Format("{0}|{1}", Regex.Replace(address.Postcode, "[^\\d]", string.Empty), Regex.Replace(address.Line1 + address.Line2, "[^\\d]", ""));
+            var postcodeDigits = string.IsNullOrWhiteSpace(address.Postcode)
+                                     ? string.Empty
+                                     : Regex.Replace(address.Postcode, "[^\\d]", string.Empty);
+            return string.Format("{0}|{1}", postcodeDigits, Regex.Replace(address.Line1 + address.Line2, "[^\\d]", ""));
         }
 
         private string GetHash(string value)
