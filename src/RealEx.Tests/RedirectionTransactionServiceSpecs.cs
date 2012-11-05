@@ -36,7 +36,7 @@ namespace RealEx.Tests
                     transactionDate = new DateTime(2012, 6, 13, 12, 0, 0);
                 };
 
-            Because of = () => result = service.CreateTransactionRequest(billingAddress, shippingAddress, transactionId, amount, transactionDate);
+            Because of = () => result = service.CreateTransactionRequest(billingAddress, shippingAddress, transactionId, amount, transactionDate, true);
 
             It should_create_hash = () => result.Sha1Hash.ShouldEqual("e34e77dd24d6b66dd6a6226149544806033f6600");
 
@@ -49,6 +49,8 @@ namespace RealEx.Tests
             It should_set_amount_with_no_decimal_points = () => result.Amount.ShouldEqual("10000");
 
             It should_set_sub_account = () => result.SubAccount.ShouldEqual("test");
+
+            It should_set_autosettle = () => result.AutoSettle.ShouldBeTrue();
         }
 
         [Subject(typeof(RedirectTransactionService), "validating transaction response")]
