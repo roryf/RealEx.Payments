@@ -16,6 +16,11 @@ namespace RealEx
 
         public TransactionRequest CreateTransactionRequest(Address billingAddress, Address shippingAddress, string transactionId, decimal total, DateTime transactionTime)
         {
+            return CreateTransactionRequest(billingAddress, shippingAddress, transactionId, total, transactionTime, false);
+        }
+
+        public TransactionRequest CreateTransactionRequest(Address billingAddress, Address shippingAddress, string transactionId, decimal total, DateTime transactionTime, bool autoSettle)
+        {
             var amount = (total * 100).ToString("##");
             var timestamp = transactionTime.ToString("yyyyMMddHHmmss");
             var hashInput = string.Format("{0}.{1}.{2}.{3}.{4}", timestamp, _configuration.MerchantId, transactionId, amount, _configuration.Currency);
@@ -26,6 +31,7 @@ namespace RealEx
             return new TransactionRequest
             {
                 Amount = amount,
+                AutoSettle = autoSettle,
                 BillingCode = billingCode,
                 BillingCountry = billingAddress.CountryIso3166Alpha2Code,
                 Currency = _configuration.Currency,
